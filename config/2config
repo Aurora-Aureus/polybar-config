@@ -108,7 +108,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-format-prefix = "    "
+format-prefix = "  "
 format-prefix-foreground = ${root.background}
 format-prefix-background = ${root.winc}
 format-prefix-overline   = ${root.background}
