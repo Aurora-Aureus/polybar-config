@@ -65,6 +65,7 @@ volc           = ${colors.blue}
 mutec          = ${colors.red}
 ethc           = ${colors.green}
 powerc         = ${colors.red}
+winc           = ${colors.red}
 
 overline-size      = ${vars.lines}
 underline-size     = ${vars.lines}
@@ -107,6 +108,11 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
+format-prefix = "    "
+format-prefix-foreground = ${root.background}
+format-prefix-background = ${root.winc}
+format-prefix-overline   = ${root.background}
+format-prefix-underline  = ${root.background}
 label = " %title:0:30:...% "
 label-foreground = ${root.background}
 label-background = ${root.box}
