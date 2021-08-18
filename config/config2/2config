@@ -67,6 +67,7 @@ ethc           = ${colors.green}
 powerc         = ${colors.red}
 winc           = ${colors.red}
 weatherc       = ${colors.blue}
+spotc          = ${colors.green}
 
 overline-size      = ${vars.lines}
 underline-size     = ${vars.lines}
@@ -87,7 +88,7 @@ font-2 = siji:pixelsize=10;2
 font-3 = MaterialIcons:size=19;7
 font-4 = WeatherIcons:size=12;7
 
-modules-left = bspwm
+modules-left = bspwm spotify
 modules-center = xwindow
 modules-right = weather pulseaudio memory cpu eth date powermenu
 
@@ -108,6 +109,25 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "  "
+format-prefix-foreground = ${root.background}
+format-prefix-background = ${root.spotc}
+format = <label>
+exec = python ~/polybar/spotify_status.py -t 50 -f ' {song} - {artist} '
+format-underline  = ${root.background}
+format-overline   = ${root.background}
+format-background = ${root.box}
+format-foreground = ${root.background}
+;#1db954
+;control players (optional)
+click-left = playerctl --player=spotify play-pause
+click-right = playerctl --player=spotify next
+click-middle = playerctl --player=spotify previous
+
 
 [module/weather]
 type = custom/script
