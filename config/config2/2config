@@ -88,7 +88,8 @@ font-2 = siji:pixelsize=10;2
 font-3 = MaterialIcons:size=19;7
 font-4 = WeatherIcons:size=12;7
 
-modules-left = bspwm spotify
+modules-left = bspwm 
+; spotify
 modules-center = xwindow
 modules-right = weather pulseaudio memory cpu eth date powermenu
 
@@ -131,7 +132,7 @@ click-middle = playerctl --player=spotify previous
 
 [module/weather]
 type = custom/script
-exec = ~/polybar/forecast-ex
+exec = ~/gits/polybar-config/config/config2/forecast-ex
 exec-if = ping openweathermap.org -c 1
 interval = 600
 ;label-font = 3
