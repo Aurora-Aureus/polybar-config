@@ -2,4 +2,4 @@
 
 killall polybar
 
-polybar -r --config=~/.config/polybar/config/configfile example &
+polybar -r --config=~/.config/polybar/config/config example &
