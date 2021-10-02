@@ -1,11 +1,8 @@
-# Polybar config
-this is my current polybar config
-#
-# Screenshot(s)
-**config 1**
+# Polybar Config
+This is my current polybar config
 
-![Image alt text](screenshots/2021-08-16-222152_1920x1080_scrot.png?raw=true)
+Make sure you have the fonts Siji, CtrlD, MaterialIcons and WeatherIcons installed!
 
-**config 2**
-
-![Image alt text](screenshots/config2.png?raw=true)
+To use this config put the directory 'config' and all the containing files into a `~/.config/polybar/` directory.
+Then add `~/.config/polybar/config/start.sh` into the WM's initialization script.
+Now either restart the WM or launch the `start.sh` script manually.

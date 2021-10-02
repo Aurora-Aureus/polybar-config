@@ -16,26 +16,27 @@
 ;
 ;==========================================================
 
+[vars]
+
+        lines = 6
+
 [colors]
 
-black       = #ff3a3b3c
-black2      = #ff4a4b4c
-blacktr     = #883a3b3c
-gray        = #ff6a6b6c
-red         = #ffef581f
-green       = #ff72a98f
-yellow      = #fff9cc35
-blue        = #ff717ec3
-magenta     = #fffa198b
-cyan        = #ff00d9c0
-white       = #ffffffea
-transparent = #00ffffff
-
-;[colors]
+        black2  = #ff1c1e26
+        black   = #ff232530
+        gray    = #ffbbbbbb
+        white   = #fffdf0ed
+        white2  = #ffd5c4a1
+        red     = #ffe95678
+        green   = #ff29d398
+        yellow  = #fffab795
+        blue    = #ff26bbd9
+        magenta = #ffb877db
+        cyan    = #ff59e1e3
 
 ;background = ${xrdb:color0:#222}
 background = #222
-background-alt = #444
+7-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
@@ -43,159 +44,54 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/left]
-        width = 17%
-        height = 24
-        radius = 0.0
-
-        background = ${colors.black}
-        foreground = ${colors.white}
-
-        modules-center   = bspwm
-        line-size = 2
-
-        border-size = 5
-        border-color = ${colors.transparent}
-
-        font-0 = fixed:pixelsize=16;1
-        font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
-        font-2 = siji:pixelsize=16;1
-
-        padding-right = 2
-
-        cursor-click = pointer
-
-[bar/underline]
-        width = 17%
-        height = 24
-        radious = 0.0
-
-        offset-x = 0%
-        offset-y = 29
-
-        background = ${colors.black}
-        foreground = ${colors.white}
-
-        modules-center = xwindow
-        line-size = 2
-        padding-left = 2
-
-        border-size = 5
-        border-color = ${colors.transparent}
-
-        font-0 = fixed:pixelsize=16;1
-        font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
-        font-2 = siji:pixelsize=16;1
-
-
-[bar/centersi]
-        width  = 8%
-        height = 30
-        radius = 6.0
-
-        offset-x = 46%
-        offset-y = -13
-
-        background = ${colors.black}
-        foreground = ${colors.white}
-
-        modules-right = memory cpu
-        line-size = 2
-
-        border-size = 5
-        border-color = ${colors.transparent}
-
-        font-0 = fixed:pixelsize=10;4
-        font-1 = unifont:fontformat=truetype:size=12:antialias=false;2
-        font-2 = siji:pixelsize=16;4
-
-        module-margin-right = 2
-        padding-right = 2
-
-        cursor-click = pointer
-
-[bar/right2]
-        width  = 17%
-        height = 34
-        radius = 0.0
-
-        offset-x = 83%
-        offset-y = 0
-
-        background = ${colors.black}
-        foreground = ${colors.white}
-
-        modules-center = pulseaudio eth date
-        line-size = 2
-
-        border-size = 5
-        border-color = ${colors.transparent}
-
-        font-0 = fixed:pixelsize=16;2
-        font-1 = unifont:fontformat=truetype:size=16:antialias=false;0
-        font-2 = siji:pixelsize=16;1
-
-        module-margin = 1
-        ;padding-right = 3
-
-        cursor-click = pointer
-
-[bar/powermenu]
-        width  = 17%
-        height = 15
-        radius = 0.0
-
-        offset-x = 83%
-        offset-y = 39
-
-        background = ${colors.black}
-        foreground = ${colors.white}
-
-        modules-center = powermenu
-        line-size = 2
-
-        border-size = 5
-        border-color = ${colors.transparent}
-
-        font-0 = fixed:pixelsize=10;1
-        font-1 = unifont:fontformat=truetype:size=16:antialias=false;2
-        font-2 = siji:pixelsize=10;2
-
-        padding = 2
-
-        cursor-click = pointer
-
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 25
+height = 40
 ;offset-x = 1%
-;offset-y = 1%
+offset-y = 0
 radius = 0.0
-fixed-center = false
+fixed-center = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background     = ${colors.black}
+background-alt = ${colors.black2}
+foreground     = ${colors.white}
+bspwmc         = ${colors.yellow}
+box            = ${colors.white}
+cpuc           = ${colors.yellow}
+ramc           = ${colors.magenta}
+datec          = ${colors.cyan}
+volc           = ${colors.green}
+mutec          = ${colors.red}
+ethc           = ${colors.green}
+powerc         = ${colors.red}
+winc           = ${colors.red}
+weatherc       = ${colors.blue}
 
-line-size = 3
-line-color = #f00
+
+overline-size      = ${vars.lines}
+underline-size     = ${vars.lines}
+
 
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = CtrlD:pixelsize=13:antialias=false;2
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;1
+font-1 = Siji:pixelsize=10;2
+font-2 = MaterialIcons:size=19;7
+font-3 = WeatherIcons:size=12;7
 
 modules-left = bspwm
-modules-center = xwindow
-modules-right = pulseaudio memory cpu eth date powermenu
+modules-center = polywins
+; xwindow
+modules-right = weather pulseaudio memory cpu eth date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -215,10 +111,42 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[module/polywins]
+type = custom/script
+exec = ~/.config/polybar/config/polywins.sh
+format = <label>
+format-overline  = ${root.background}
+format-underline = ${root.background}
+label = %output%
+label-padding = 1
+tail = true
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/config/forecast-ex
+exec-if = ping openweathermap.org -c 1
+interval = 600
+;label-font = 3
+format-underline         = ${root.background}
+format-overline          = ${root.background}
+label-foreground         = ${root.background}
+label-background         = ${root.box}
+format-prefix            = "  "
+format-prefix-background = ${root.weatherc}
+format-prefix-foreground = ${root.background}
+
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
-label-underline = ${colors.magenta}
+format-prefix = "  "
+format-prefix-foreground = ${root.background}
+format-prefix-background = ${root.winc}
+format-prefix-overline   = ${root.background}
+format-prefix-underline  = ${root.background}
+label = " %title:0:30:...% "
+label-foreground = ${root.background}
+label-background = ${root.box}
+label-underline  = ${root.background}
+label-overline   = ${root.background}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -250,19 +178,26 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.black2}
-label-focused-underline= ${colors.magenta}
+label-focused-foreground = ${root.background}
+label-focused-background = ${root.bspwmc}
+label-focused-underline  = ${root.background}
+label-focused-overline   = ${root.background}
 label-focused-padding = 2
 
 label-occupied = %index%
 label-occupied-padding = 2
+label-occupied-foreground = ${root.background}
+label-occupied-background = ${root.box}
+label-occupied-underline  = ${root.background}
+label-occupied-overline   = ${root.background}
 
 label-urgent = %index%!
-label-urgent-background = ${colors.red}
-label-urgent-padding = 3
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
 
-label-empty = %index%
-label-empty-foreground = ${colors.black2}
+label-empty =
+;%index%
+label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 1
 
 ; Separator in between workspaces
@@ -344,18 +279,28 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU: "
-format-prefix-foreground = ${colors.yellow}
-format-underline = ${colors.yellow}
-label = %percentage%%
+format-prefix = "  "
+format-prefix-background = ${root.cpuc}
+format-prefix-foreground = ${root.background}
+format-underline = ${root.background}
+format-overline  = ${root.background}
+label = "%percentage:2%% "
+label-foreground = ${root.background}
+label-background = ${root.box}
+label-underline  = ${root.background}
+label-overline   = ${root.background}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "RAM: "
-format-prefix-foreground = ${colors.magenta}
-format-underline = ${colors.magenta}
-label = %percentage_used%%
+format-prefix = "  "
+format-prefix-foreground = ${root.background}
+format-prefix-background = ${root.ramc}
+format-underline = ${root.background}
+format-overline  = ${root.background}
+label = " %percentage_used%% "
+label-foreground = ${root.background}
+label-background = ${root.box}
 
 [module/wlan]
 type = internal/network
@@ -384,49 +329,59 @@ type = internal/network
 interface = enp5s0
 interval = 3.0
 
-format-connected-underline = ${colors.green}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.green}
-label-connected = UP
-label-connected-foreground = ${colors.green}
+format-connected-underline = ${root.background}
+format-connected-overline  = ${root.background}
+format-connected-prefix-background = ${root.ethc}
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${root.background}
+label-connected = " UP "
+label-connected-foreground = ${root.background}
+label-connected-background = ${root.box}
 
-;format-disconnected =
-format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = ${colors.red}
-format-disconnected-underline = ${colors.red}
-label-disconnected = DOWN
-label-disconnected-foreground = ${colors.red}
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
 interval = 5
 
-date = " %A |"
+date = " %A"
 date-alt = " %d %m %Y |"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.cyan}
-format-underline = ${colors.cyan}
+format-prefix ="  "
+format-prefix-foreground = ${root.background}
+format-prefix-background = ${root.datec}
+format-underline = ${root.background}
+format-overline  = ${root.background}
 
-label = %date% %time%
+label = "%date% %time% "
+label-foreground = ${root.background}
+label-background = ${root.box}
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-format-volume-prefix = "VOL: "
-format-volume-prefix-foreground = ${colors.blue}
-label-volume = %percentage%%
-format-volume-underline = ${colors.blue}
-label-volume-foreground = ${colors.white}
+format-volume-prefix = "  "
+format-volume-prefix-foreground = ${root.background}
+format-volume-prefix-background = ${root.volc}
+format-volume-underline = ${root.background}
+format-volume-overline  = ${root.background}
+label-volume = " %percentage%% "
+label-volume-foreground = ${root.background}
+label-volume-background = ${root.box}
 
-label-muted = muted
-label-muted-foreground = ${colors.red}
-label-muted-underline  = ${colors.red}
+label-muted = "  muted "
+label-muted-foreground = ${root.background}
+label-muted-background = ${root.mutec}
+label-muted-overline   = ${root.background}
+label-muted-underline  = ${root.background}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -530,28 +485,62 @@ type = custom/menu
 
 expand-right = true
 
-format-spacing = 1
+format-spacing = 2
 
-label-open = 
-label-open-foreground = ${colors.red}
-label-close =  cancel
-label-close-foreground = ${colors.red}
-label-separator = |
-label-separator-foreground = ${colors.black2}
+label-open = "  "
+label-open-foreground = ${root.background}
+label-open-background = ${root.powerc}
+label-open-underline  = ${root.background}
+label-open-overline   = ${root.background}
+label-close ="   cancel "
+label-close-foreground = ${root.background}
+label-close-background = ${root.powerc}
+label-close-underline  = ${root.background}
+label-close-overline   = ${root.background}
+;label-separator = |
+;label-separator-foreground = ${root.background}
+;label-separator-background = ${root.box}
 
-menu-0-0 = reboot
+menu-0-0-foreground = ${root.background}
+menu-0-0-background = ${root.box}
+menu-0-0-overline   = ${root.background}
+menu-0-0-underline  = ${root.background}
+menu-0-0 = " reboot "
 menu-0-0-exec = menu-open-1
-menu-0-1 = power off
+
+menu-0-1-foreground = ${root.background}
+menu-0-1-background = ${root.box}
+menu-0-1-overline   = ${root.background}
+menu-0-1-underline  = ${root.background}
+menu-0-1 = " power off "
 menu-0-1-exec = menu-open-2
 
-menu-1-0 = cancel
+menu-1-0-foreground = ${root.background}
+menu-1-0-background = ${root.box}
+menu-1-0-overline   = ${root.background}
+menu-1-0-underline  = ${root.background}
+menu-1-0 = " cancel "
 menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
+
+menu-1-1-foreground = ${root.background}
+menu-1-1-background = ${root.box}
+menu-1-1-overline   = ${root.background}
+menu-1-1-underline  = ${root.background}
+menu-1-1 = " reboot "
 menu-1-1-exec = sudo reboot
 
-menu-2-0 = power off
+menu-2-0-foreground = ${root.background}
+menu-2-0-background = ${root.box}
+menu-2-0-overline   = ${root.background}
+menu-2-0-underline  = ${root.background}
+menu-2-0 = " power off "
 menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
+
+menu-2-1-foreground = ${root.background}
+menu-2-1-background = ${root.box}
+menu-2-1-overline   = ${root.background}
+menu-2-1-underline  = ${root.background}
+menu-2-1 = " cancel "
 menu-2-1-exec = menu-open-0
 
 [settings]
@@ -563,7 +552,7 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 1
-margin-bottom = s
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
